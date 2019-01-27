@@ -1,0 +1,29 @@
+{
+  "title":			"module_header_tags_gdpr",
+  "type":       "meta tag",
+  "vendor":			"header_tags",
+  "is_free":   "Yes",
+  "website_link_to_sell" : "",
+  "version":			1.0,
+  "req_core_version":	3.0,
+  "license":			"GPL 2 - MIT",
+  "tag":			    "header tag, script, meta tag, gdpr, compliance, european, law",
+  "install":            "includes/modules/",
+  "module_directory":   "header_tags",
+  "apps_name":          "",
+  "type_module":        "fixe",
+  "dependance":         "",
+
+ "description":        "This module allow you to comply the european cookie law regulates the management of cookies and you should ask your visitors their consent before exposing them to third party services.",
+  "image":              "ModuleInfosJson/image.png",
+
+  "authors": [
+    {
+      "name":		    "ClicShopping Team",
+      "company":	    "Innov-concept",
+      "email":	        "",
+      "website":	    "http://www.clicshopping.org",
+      "Community":	  "http://www.clicshopping.org"
+    }
+  ]
+}

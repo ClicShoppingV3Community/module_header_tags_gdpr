@@ -1,0 +1,2 @@
+module_header_tags_gdpr_tarte_au_citron_title = GDPR European Regulation : All in one : Manage your content
+module_header_tags_gdpr_tarte_au_citron_description = GDPR : All in one : Manage your content.
