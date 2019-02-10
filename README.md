@@ -12,6 +12,8 @@ Lot of service support, google, amazon, facebook ... More 20.
 
 If you use this script, do not install other like google analytics, pixel ...
 
+More info : https://opt-out.ferank.eu/
+
 This module contains
 
 - The language files in English and French
