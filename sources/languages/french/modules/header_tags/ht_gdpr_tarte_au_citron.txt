@@ -1,2 +1,2 @@
-module_header_tags_gdpr_tarte_au_citron_title = GDPR Législation européenne : Tout en un : gestion de votre contenu
-module_header_tags_gdpr_tarte_au_citron_description = GDPR : Tout en un : gestion de votre contenu
+module_header_tags_gdpr_tarte_au_citron_title = GDPR : Législation Européenne
+module_header_tags_gdpr_tarte_au_citron_description = GDPR : Législation Européenne
