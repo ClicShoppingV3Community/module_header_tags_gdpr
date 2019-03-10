@@ -150,7 +150,7 @@
 //Advertisement
 //**************************
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON == 'True' && !is_null($_GET['products_id']) ) {
-        $amazon = '<div class="amazon_product" amazonid="' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON_ACCOUNT_ID .'" productid="' . $_GET['products_id'] . '"></div>';
+        $amazon = '<div class="amazon_product" amazonid="' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON_ACCOUNT_ID .'" productid="' . (int)$_GET['products_id'] . '"></div>';
       }
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CRITEO == 'True') {
@@ -199,7 +199,6 @@
       $footer  .= <<<EOD
 <script type="text/javascript">
 tarteaucitron.init({
-  /* "privacyUrl": "",  Privacy policy url */
   "hashtag": "#tarteaucitron", /* Automatically open the panel with the hashtag */
   "highPrivacy": {$high_privacy}, /* disabling the auto consent feature on navigation? */
   "orientation": "{$orientation}", /* the big banner should be on 'top' or 'bottom' ? */
@@ -209,9 +208,6 @@ tarteaucitron.init({
   "removeCredit": true, /* remove the credit link? */
   "handleBrowserDNTRequest": {$handle_browser_dtn_request}, /*false,  Deny everything if DNT is on */
   //"cookieDomain": ".example.com" /* Nom de domaine sur lequel sera posé le cookie pour les sous-domaines */
-	  "moreInfoLink": true, /* Show more info link */
-   "useExternalCss": false, /* If false, the tarteaucitron.css file will be loaded */
-/*	  "readmoreLink": "/cookiespolicy"  Change the default readmore link */
 });
 </script>
 <script type="text/javascript">var tarteaucitronForceLanguage = '{$language}';</script>
