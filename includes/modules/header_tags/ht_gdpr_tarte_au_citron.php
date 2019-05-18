@@ -55,19 +55,27 @@
 //*********************************
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_JSAPI == 'True') {
         $googlejsapi = '<script type="text/javascript">(tarteaucitron.job = tarteaucitron.job || []).push(\'jsapi\');</script>';
+      } else {
+        $googlejsapi = '';
       }
 
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_TAG_MANAGER == 'True') {
         $google_tag_manager = '<script type="text/javascript">tarteaucitron.user.googletagmanagerId = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_TAG_MANAGER_ACCOUNT_ID .'\';(tarteaucitron.job = tarteaucitron.job || []).push(\'googletagmanager\');</script>';
+      } else {
+        $google_tag_manager = '';
       }
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_TIME_LINE == 'True') {
         $timeline = '<script type="text/javascript">(tarteaucitron.job = tarteaucitron.job || []).push(\'timelinejs\');</script>';
+      } else {
+        $timeline = '';
       }
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_TYPEKIT == 'True') {
         $type_kit = '<script type="text/javascript">tarteaucitron.user.typekitId = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_TYPEKIT_ID . '\';(tarteaucitron.job = tarteaucitron.job || []).push(\'typekit\');</script>';
+      } else {
+        $type_kit = '';
       }
 
 
@@ -77,10 +85,14 @@
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_FACEBOOK_COMMENT == 'True') {
         $facebook_comment = '<script type="text/javascript">(tarteaucitron.job = tarteaucitron.job || []).push(\'facebookcomment\');</script>';
+      } else {
+        $facebook_comment = '';
       }
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_DISQUS == 'True') {
         $disqus = ' <script type="text/javascript">tarteaucitron.user.disqusShortname = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_DISQUS_SHORT_NAME . '\';(tarteaucitron.job = tarteaucitron.job || []).push(\'disqus\');</script>';
+      } else {
+        $disqus = '';
       }
 
 //*********************************
@@ -89,60 +101,86 @@
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ALEXA == 'True') {
         $alexa = '<script type="text/javascript">tarteaucitron.user.alexaAccountID = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ACCOUNT_ID . '\';(tarteaucitron.job = tarteaucitron.job || []).push(\'alexa\');</script>';
+      } else {
+        $alexa = '';
       }
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CLICKY == 'True') {
         $clicky = '<script type="text/javascript">tarteaucitron.user.clickyId = ' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CLICKY_ACCOUNT_ID . ';tarteaucitron.user.clickyMore = function () { /* add here your optionnal clicky function */ };(tarteaucitron.job = tarteaucitron.job || []).push(\'clicky\');</script>';
+      } else {
+        $clicky = '';
       }
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CRAZY_EGG == 'True') {
         $crazy_egg = '<script type="text/javascript">tarteaucitron.user.crazyeggId = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CRAZY_EGG_ACCOUNT_ID . '\';(tarteaucitron.job = tarteaucitron.job || []).push(\'crazyegg\');</script>';
+      } else {
+        $crazy_egg = '';
       }
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ETRACKER == 'True') {
         $etracker = '<script type="text/javascript">tarteaucitron.user.etracker = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ETRACKER_SECURE_CODE  .'\';(tarteaucitron.job = tarteaucitron.job || []).push(\'etracker\');</script>';
+      } else {
+        $etracker = '';
       }
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_FERANK == 'True') {
         $ferank = '<script type="text/javascript">(tarteaucitron.job = tarteaucitron.job || []).push(\'ferank\');</script>';
+      } else {
+        $ferank = '';
       }
 
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GET_PLUS == 'True') {
         $get_plus = '<script type="text/javascript">tarteaucitron.user.getplusId = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GET_PLUS_ACCOUNT_ID . '\';(tarteaucitron.job = tarteaucitron.job || []).push(\'getplus\');</script>';
+      } else {
+        $get_plus = '';
       }
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GA == 'True') {
         $google_analytics_ga = $CLICSHOPPING_Hooks->output('HeaderTags', 'GDPRGoogleAnalyticsGa');
+      } else {
+        $google_analytics_ga = '';
       }
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GTAGJS == 'True') {
         $google_analytics_gtagjs = $CLICSHOPPING_Hooks->output('HeaderTags', 'GDPRGoogleAnalyticsGtagJs');
+      } else {
+        $google_analytics_gtagjs = '';
       }
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_UNIVERSAL == 'True') {
         $google_analytics_universal = $CLICSHOPPING_Hooks->output('HeaderTags', 'GDPRGoogleAnalyticsUniversal');
+      } else {
+        $google_analytics_universal = '';
       }
 
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_ANALYTICS == 'True') {
         $microsoft_campaign = '<script type="text/javascript">(tarteaucitron.job = tarteaucitron.job || []).push(\'microsoftcampaignanalytics\');</script><br />';
         $microsoft_campaign .= '<script type="text/javascript">tarteaucitron.user.microsoftcampaignanalyticsUUID = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_UUID .'\';tarteaucitron.user.microsoftcampaignanalyticsdomaineId = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_DOMAIN_ID ; '\';tarteaucitron.user.microsoftcampaignanalyticsactionId = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_ACTION_ID . '\';</script>';
+      } else {
+        $microsoft_campaign = '';
       }
 
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_START_COUNTER == 'True') {
         $tart_counter = '<script type="text/javascript">(tarteaucitron.job = tarteaucitron.job || []).push(\'statcounter\');</script><br />';
         $tart_counter .= '<div class="statcounter-canvas"></div><script type="text/javascript">var sc_project = sc_project, sc_invisible = sc_invisible (0 | 1), sc_security = "sc_security", sc_text = sc_text (0 | 2 | 3 | 4 | 5);</script>';
+      } else {
+        $tart_counter = '';
       }
 
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_VISUAL_REVENUE == 'True') {
         $visual_revenue = '<script type="text/javascript">tarteaucitron.user.visualrevenueId = ID;(tarteaucitron.job = tarteaucitron.job || []).push(\'visualrevenue\');</script><br />';
+      } else {
+        $visual_revenue = '';
       }
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_XITI == 'True') {
         $xiti = '<script type="text/javascript">tarteaucitron.user.xitiId = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_XITI_ID . '\';tarteaucitron.user.xitiMore = function () { /* add here your optionnal xiti function */ };(tarteaucitron.job = tarteaucitron.job || []).push(\'xiti\');</script>';
+      } else {
+        $xiti = '';
       }
 
 
@@ -151,22 +189,30 @@
 //**************************
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON == 'True' && !is_null($_GET['products_id']) ) {
         $amazon = '<div class="amazon_product" amazonid="' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON_ACCOUNT_ID .'" productid="' . (int)$_GET['products_id'] . '"></div>';
+      } else {
+        $amazon = '';
       }
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CRITEO == 'True') {
         $criteo = '<script type="text/javascript">(tarteaucitron.job = tarteaucitron.job || []).push(\'criteo\');</script>';
         $criteo .= '<div class="criteo-canvas" zoneid="'. MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CRITEO_ZONE_ID . '"></div>';
+      } else {
+        $criteo = '';
       }
 
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION == 'True') {
         $adwords_conversion = '<script type="text/javascript">(tarteaucitron.job = tarteaucitron.job || []).push(\'googleadwordsconversion\');</script>';
         $adwords_conversion .= '<script type="text/javascript">tarteaucitron.user.adwordsconversionId = ' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_ID .';tarteaucitron.user.adwordsconversionLabel = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_LABEL . '\';tarteaucitron.user.adwordsconversionLanguage  = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_LANGUAGE .'\';tarteaucitron.user.adwordsconversionFormat = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_FORMAT . '\';tarteaucitron.user.adwordsconversionColor = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_COLOR . '\';tarteaucitron.user.adwordsconversionValue = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_VALUE . '\';tarteaucitron.user.adwordsconversionCurrency = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_CURRENCY . '\';tarteaucitron.user.adwordsconversionCustom1 = \'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_CUSTOM1\';tarteaucitron.user.adwordsconversionCustom2 = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_CUSTOM2 . '\';</script>';
+      } else {
+        $adwords_conversion = '';
       }
 
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_REMARKETING == 'True') {
         $adwords_remarketing = '<script type="text/javascript">tarteaucitron.user.adwordsremarketingId = ' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_REMARKETING_ID . ';(tarteaucitron.job = tarteaucitron.job || []).push(\'googleadwordsremarketing\');</script>';
+      } else {
+        $adwords_remarketing = '';
       }
 
 
@@ -175,18 +221,23 @@
 //*********************************
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_PURECHAT == 'True') {
         $pure_chat = ' <script type="text/javascript">tarteaucitron.user.purechatId = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_PURECHAT_ID . '\';(tarteaucitron.job = tarteaucitron.job || []).push(\'purechat\');</script>';
+      } else {
+        $pure_chat = '';
       }
 
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ZOPIM == 'True') {
         $zopim = '<script type="text/javascript">tarteaucitron.user.zopimID = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ZOPIM_ID . '\';(tarteaucitron.job = tarteaucitron.job || []).push(\'zopim\');</script>';
+      } else {
+        $zopim = '';
       }
-
 //*********************************
 //Social network  - todo
 //*********************************
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_FACEBOOK_PIXEL == 'True') {
         $facebook_pixel = $CLICSHOPPING_Hooks->output('HeaderTags', 'GDPRFacebookPixel');
+      } else {
+        $facebook_pixel = '';
       }
 
 
