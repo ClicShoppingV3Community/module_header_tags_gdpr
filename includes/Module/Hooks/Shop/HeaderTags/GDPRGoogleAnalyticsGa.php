@@ -1,13 +1,13 @@
 <?php
-/**
- *
- *  @copyright 2008 - https://www.clicshopping.org
- *  @Brand : ClicShopping(Tm) at Inpi all right Reserved
- *  @Licence GPL 2 & MIT
- *  @licence MIT - Portion of osCommerce 2.4
- *  @Info : https://www.clicshopping.org/forum/trademark/
- *
- */
+  /**
+   *
+   * @copyright 2008 - https://www.clicshopping.org
+   * @Brand : ClicShopping(Tm) at Inpi all right Reserved
+   * @Licence GPL 2 & MIT
+   * @licence MIT - Portion of osCommerce 2.4
+   * @Info : https://www.clicshopping.org/forum/trademark/
+   *
+   */
 
   namespace ClicShopping\OM\Module\Hooks\Shop\HeaderTags;
 
@@ -15,15 +15,18 @@
   use ClicShopping\OM\Registry;
   use ClicShopping\OM\CLICSHOPPINGOM;
 
-  class GDPRGoogleAnalyticsGa {
+  class GDPRGoogleAnalyticsGa
+  {
 
     private $db;
 
-    public function __construct() {
+    public function __construct()
+    {
       $this->db = Registry::get('Db');
     }
 
-    private function getOption() {
+    private function getOption()
+    {
       $CLICSHOPPING_Customer = Registry::get('Customer');
 
       $header = '';
@@ -53,7 +56,7 @@
         $QorderTotals->execute();
 
 
-        while ($order_totals = $QorderTotals->fetch() ) {
+        while ($order_totals = $QorderTotals->fetch()) {
           $totals[$order_totals['class']] = $order_totals['value'];
         }
 
@@ -101,11 +104,11 @@
                                              ');
 
         $QorderProducts->bindInt(':orders_id', $Qorder->valueInt('orders_id'));
-        $QorderProducts->bindValue(':code',  DEFAULT_LANGUAGE );
+        $QorderProducts->bindValue(':code', DEFAULT_LANGUAGE);
 
         $QorderProducts->execute();
 
-        while ($QorderProducts->fetch() ) {
+        while ($QorderProducts->fetch()) {
 
           $Qcategory = $this->db->prepare('select cd.categories_name
                                             from categories_description cd,
@@ -118,7 +121,7 @@
                                            ');
 
           $Qcategory->bindInt(':products_id', $QorderProducts->valueInt('products_id'));
-          $Qcategory->bindValue(':code',  DEFAULT_LANGUAGE );
+          $Qcategory->bindValue(':code', DEFAULT_LANGUAGE);
 
           $Qcategory->execute();
 
@@ -140,9 +143,10 @@
       return $header;
     }
 
-    public function execute() {
+    public function execute()
+    {
       if (defined('MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GA_ACCOUNT_ID')) {
-        $output = '<script type="text/javascript">tarteaucitron.user.gajsUa = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GA_ACCOUNT_ID .'\';tarteaucitron.user.gajsMore = function () { ' . $this->getOption() . ' };(tarteaucitron.job = tarteaucitron.job || []).push(\'gajs\');</script>';
+        $output = '<script type="text/javascript">tarteaucitron.user.gajsUa = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GA_ACCOUNT_ID . '\';tarteaucitron.user.gajsMore = function () { ' . $this->getOption() . ' };(tarteaucitron.job = tarteaucitron.job || []).push(\'gajs\');</script>';
         return $output;
       }
     }

@@ -1,18 +1,19 @@
 <?php
   /**
- *
- *  @copyright 2008 - https://www.clicshopping.org
- *  @Brand : ClicShopping(Tm) at Inpi all right Reserved
- *  @Licence GPL 2 & MIT
- *  @licence MIT - Portion of osCommerce 2.4
- *  @Info : https://www.clicshopping.org/forum/trademark/
- *
- */
+   *
+   * @copyright 2008 - https://www.clicshopping.org
+   * @Brand : ClicShopping(Tm) at Inpi all right Reserved
+   * @Licence GPL 2 & MIT
+   * @licence MIT - Portion of osCommerce 2.4
+   * @Info : https://www.clicshopping.org/forum/trademark/
+   *
+   */
 
   use ClicShopping\OM\CLICSHOPPING;
   use ClicShopping\OM\Registry;
 
-  class ht_gdpr_tarte_au_citron {
+  class ht_gdpr_tarte_au_citron
+  {
     var $code = 'ht_gdpr_tarte_au_citron';
     var $group = 'header_tags';
     var $title;
@@ -20,24 +21,26 @@
     var $sort_order;
     var $enabled = false;
 
-    function __construct() {
+    function __construct()
+    {
       $this->title = CLICSHOPPING::getDef('module_header_tags_gdpr_tarte_au_citron_title');
       $this->description = CLICSHOPPING::getDef('module_header_tags_gdpr_tarte_au_citron_description');
 
-      if ( defined('MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS') ) {
+      if (defined('MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS')) {
         $this->sort_order = MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_SORT_ORDER;
         $this->enabled = (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS == 'True');
       }
     }
 
-    function execute() {
+    function execute()
+    {
       $CLICSHOPPING_Hooks = Registry::get('Hooks');
       $CLICSHOPPING_Template = Registry::get('Template');
       $CLICSHOPPING_Language = Registry::get('Language');
 
       $language_code = $CLICSHOPPING_Language->getLanguageCode();
 
-      if ($language_code == 'fr' || $language_code == 'en' || $language_code == 'nl' || $language_code == 'de' || $language_code == 'es' || $language_code == 'it' || $language_code == 'pt' || $language_code == 'pl' || $language_code == 'ru' ) {
+      if ($language_code == 'fr' || $language_code == 'en' || $language_code == 'nl' || $language_code == 'de' || $language_code == 'es' || $language_code == 'it' || $language_code == 'pt' || $language_code == 'pl' || $language_code == 'ru') {
         $language = $language_code;
       } else {
         $language = 'en';
@@ -61,7 +64,7 @@
 
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_TAG_MANAGER == 'True') {
-        $google_tag_manager = '<script type="text/javascript">tarteaucitron.user.googletagmanagerId = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_TAG_MANAGER_ACCOUNT_ID .'\';(tarteaucitron.job = tarteaucitron.job || []).push(\'googletagmanager\');</script>';
+        $google_tag_manager = '<script type="text/javascript">tarteaucitron.user.googletagmanagerId = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_TAG_MANAGER_ACCOUNT_ID . '\';(tarteaucitron.job = tarteaucitron.job || []).push(\'googletagmanager\');</script>';
       } else {
         $google_tag_manager = '';
       }
@@ -118,7 +121,7 @@
       }
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ETRACKER == 'True') {
-        $etracker = '<script type="text/javascript">tarteaucitron.user.etracker = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ETRACKER_SECURE_CODE  .'\';(tarteaucitron.job = tarteaucitron.job || []).push(\'etracker\');</script>';
+        $etracker = '<script type="text/javascript">tarteaucitron.user.etracker = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ETRACKER_SECURE_CODE . '\';(tarteaucitron.job = tarteaucitron.job || []).push(\'etracker\');</script>';
       } else {
         $etracker = '';
       }
@@ -157,7 +160,8 @@
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_ANALYTICS == 'True') {
         $microsoft_campaign = '<script type="text/javascript">(tarteaucitron.job = tarteaucitron.job || []).push(\'microsoftcampaignanalytics\');</script><br />';
-        $microsoft_campaign .= '<script type="text/javascript">tarteaucitron.user.microsoftcampaignanalyticsUUID = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_UUID .'\';tarteaucitron.user.microsoftcampaignanalyticsdomaineId = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_DOMAIN_ID ; '\';tarteaucitron.user.microsoftcampaignanalyticsactionId = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_ACTION_ID . '\';</script>';
+        $microsoft_campaign .= '<script type="text/javascript">tarteaucitron.user.microsoftcampaignanalyticsUUID = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_UUID . '\';tarteaucitron.user.microsoftcampaignanalyticsdomaineId = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_DOMAIN_ID;
+        '\';tarteaucitron.user.microsoftcampaignanalyticsactionId = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_ACTION_ID . '\';</script>';
       } else {
         $microsoft_campaign = '';
       }
@@ -187,15 +191,15 @@
 //**************************
 //Advertisement
 //**************************
-      if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON == 'True' && !is_null($_GET['products_id']) ) {
-        $amazon = '<div class="amazon_product" amazonid="' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON_ACCOUNT_ID .'" productid="' . (int)$_GET['products_id'] . '"></div>';
+      if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON == 'True' && !is_null($_GET['products_id'])) {
+        $amazon = '<div class="amazon_product" amazonid="' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON_ACCOUNT_ID . '" productid="' . (int)$_GET['products_id'] . '"></div>';
       } else {
         $amazon = '';
       }
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CRITEO == 'True') {
         $criteo = '<script type="text/javascript">(tarteaucitron.job = tarteaucitron.job || []).push(\'criteo\');</script>';
-        $criteo .= '<div class="criteo-canvas" zoneid="'. MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CRITEO_ZONE_ID . '"></div>';
+        $criteo .= '<div class="criteo-canvas" zoneid="' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CRITEO_ZONE_ID . '"></div>';
       } else {
         $criteo = '';
       }
@@ -203,7 +207,7 @@
 
       if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION == 'True') {
         $adwords_conversion = '<script type="text/javascript">(tarteaucitron.job = tarteaucitron.job || []).push(\'googleadwordsconversion\');</script>';
-        $adwords_conversion .= '<script type="text/javascript">tarteaucitron.user.adwordsconversionId = ' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_ID .';tarteaucitron.user.adwordsconversionLabel = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_LABEL . '\';tarteaucitron.user.adwordsconversionLanguage  = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_LANGUAGE .'\';tarteaucitron.user.adwordsconversionFormat = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_FORMAT . '\';tarteaucitron.user.adwordsconversionColor = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_COLOR . '\';tarteaucitron.user.adwordsconversionValue = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_VALUE . '\';tarteaucitron.user.adwordsconversionCurrency = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_CURRENCY . '\';tarteaucitron.user.adwordsconversionCustom1 = \'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_CUSTOM1\';tarteaucitron.user.adwordsconversionCustom2 = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_CUSTOM2 . '\';</script>';
+        $adwords_conversion .= '<script type="text/javascript">tarteaucitron.user.adwordsconversionId = ' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_ID . ';tarteaucitron.user.adwordsconversionLabel = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_LABEL . '\';tarteaucitron.user.adwordsconversionLanguage  = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_LANGUAGE . '\';tarteaucitron.user.adwordsconversionFormat = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_FORMAT . '\';tarteaucitron.user.adwordsconversionColor = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_COLOR . '\';tarteaucitron.user.adwordsconversionValue = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_VALUE . '\';tarteaucitron.user.adwordsconversionCurrency = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_CURRENCY . '\';tarteaucitron.user.adwordsconversionCustom1 = \'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_CUSTOM1\';tarteaucitron.user.adwordsconversionCustom2 = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_CUSTOM2 . '\';</script>';
       } else {
         $adwords_conversion = '';
       }
@@ -247,7 +251,7 @@
 
       $footer = '<script src="' . CLICSHOPPING::link('sources/javascript/gdpr_tarte_au_citron/tarteaucitron.js', null, false) . '"></script>';
 
-      $footer  .= <<<EOD
+      $footer .= <<<EOD
 <script type="text/javascript">
 tarteaucitron.init({
   "hashtag": "#tarteaucitron", /* Automatically open the panel with the hashtag */
@@ -292,19 +296,22 @@ EOD;
 
       $CLICSHOPPING_Template->addBlock($footer, 'footer_scripts');
 
-      $output = ' <link rel="stylesheet" href="'. CLICSHOPPING::link('sources/javascript/gdpr_tarte_au_citron/css/tarteaucitron.css', null, false) . '">';
+      $output = ' <link rel="stylesheet" href="' . CLICSHOPPING::link('sources/javascript/gdpr_tarte_au_citron/css/tarteaucitron.css', null, false) . '">';
       $CLICSHOPPING_Template->addBlock($output . "\n", $this->group);
     }
 
-    function isEnabled() {
+    function isEnabled()
+    {
       return $this->enabled;
     }
 
-    function check() {
+    function check()
+    {
       return defined('MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS');
     }
 
-    function install() {
+    function install()
+    {
       $CLICSHOPPING_Db = Registry::get('Db');
 
       $CLICSHOPPING_Db->save('configuration', [
@@ -407,9 +414,9 @@ EOD;
         'date_added' => 'now()'
       ]);
 
-/*******************************************
- * Plugin
- */
+      /*******************************************
+       * Plugin
+       */
       $CLICSHOPPING_Db->save('configuration', [
         'configuration_title' => 'Do you want enable google jsapi',
         'configuration_key' => 'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_JSAPI',
@@ -544,13 +551,9 @@ div id="disqus_thread"></div
       ]);
 
 
-
-
-
-
-/*************************************
- * Mesure Audience
- */
+      /*************************************
+       * Mesure Audience
+       */
 
       $CLICSHOPPING_Db->save('configuration', [
         'configuration_title' => 'Do you want enable Alexa',
@@ -712,7 +715,6 @@ s.src = ( document.location.protocol == \'https:\' ? \'https://stats.webleads-tr
       ]);
 
 
-
       $CLICSHOPPING_Db->save('configuration', [
         'configuration_title' => 'Do you want enable Google analytics GA',
         'configuration_key' => 'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GA',
@@ -854,7 +856,7 @@ class="conversionmsn" type="text/javascript"> mstag.loadTag("analytics", {dedup:
       ]);
 
 
-     $CLICSHOPPING_Db->save('configuration', [
+      $CLICSHOPPING_Db->save('configuration', [
         'configuration_title' => 'Do you want enable Start Counter',
         'configuration_key' => 'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_START_COUNTER',
         'configuration_value' => 'False',
@@ -921,7 +923,6 @@ document.write(Xt_i+\'&ref=\'+Xt_r.replace(/[<>"]/g, \'\').replace(/&/g, \'$\')+
       ]);
 
 
-
       $CLICSHOPPING_Db->save('configuration', [
         'configuration_title' => 'Do you want enable Amazon',
         'configuration_key' => 'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON',
@@ -935,7 +936,6 @@ iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scroll
         'set_function' => 'clic_cfg_set_boolean_value(array(\'True\', \'False\))',
         'date_added' => 'now()'
       ]);
-
 
 
       $CLICSHOPPING_Db->save('configuration', [
@@ -1131,8 +1131,6 @@ src="//www.googleadservices.com/pagead/conversion.js">
       ]);
 
 
-
-
       $CLICSHOPPING_Db->save('configuration', [
         'configuration_title' => 'Do you want enable Pure Chat',
         'configuration_key' => 'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_PURECHAT',
@@ -1176,8 +1174,6 @@ type=\'text/javascript\';e.parentNode.insertBefore($,e)})(document,\'script\');
         'set_function' => 'clic_cfg_set_boolean_value(array(\'True\', \'False\))',
         'date_added' => 'now()'
       ]);
-
-
 
 
       $CLICSHOPPING_Db->save('configuration', [
@@ -1224,76 +1220,78 @@ type=\'text/javascript\';e.parentNode.insertBefore($,e)})(document,\'script\');
       );
     }
 
-    function remove() {
+    function remove()
+    {
       return Registry::get('Db')->exec('delete from :table_configuration where configuration_key in ("' . implode('", "', $this->keys()) . '")');
     }
 
-    function keys() {
+    function keys()
+    {
       return ['MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS_CODE_LANGUAGE',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS_HIGH_PRIVACY',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS_ORIENTATION',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS_ADBLOCKER',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS_SMALL_ALERT',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS_COOKIES_LIST',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS_HANDLE_BROWSER_DTN_REQUEST',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_JSAPI',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_TAG_MANAGER',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_TAG_MANAGER_ACCOUNT_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_TIME_LINE',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_TYPEKIT',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_TYPEKIT_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_FACEBOOK_COMMENT',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_DISQUS',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_DISQUS_SHORT_NAME',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ALEXA',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ACCOUNT_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CLICKY',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CLICKY_ACCOUNT_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CRAZY_EGG',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CRAZY_EGG_ACCOUNT_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ETRACKER',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ETRACKER_SECURE_CODE',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_FERANK',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GET_PLUS',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GET_PLUS_ACCOUNT_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GA',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GA_ACCOUNT_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GTAGJS',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GTAGJS_ACCOUNT_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_UNIVERSAL',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_UNIVERSAL_ACCOUNT_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_ANALYTICS',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_UUID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_DOMAIN_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_ACTION_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_START_COUNTER',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_VISUAL_REVENUE',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_XITI',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_XITI_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON_ACCOUNT_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CRITEO',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CRITEO_ZONE_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_LABEL',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_LANGUAGE',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_FORMAT',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_COLOR',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_VALUE',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_CURRENCY',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_CUSTOM1',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_CUSTOM2',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_REMARKETING',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_REMARKETING_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_PURECHAT',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_PURECHAT_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ZOPIM',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ZOPIM_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_FACEBOOK_PIXEL',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_FACEBOOK_PIXEL_YOUR_ID',
-              'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_SORT_ORDER',
-              ];
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS_CODE_LANGUAGE',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS_HIGH_PRIVACY',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS_ORIENTATION',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS_ADBLOCKER',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS_SMALL_ALERT',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS_COOKIES_LIST',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS_HANDLE_BROWSER_DTN_REQUEST',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_JSAPI',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_TAG_MANAGER',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_TAG_MANAGER_ACCOUNT_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_TIME_LINE',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_TYPEKIT',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_TYPEKIT_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_FACEBOOK_COMMENT',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_DISQUS',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_DISQUS_SHORT_NAME',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ALEXA',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ACCOUNT_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CLICKY',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CLICKY_ACCOUNT_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CRAZY_EGG',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CRAZY_EGG_ACCOUNT_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ETRACKER',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ETRACKER_SECURE_CODE',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_FERANK',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GET_PLUS',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GET_PLUS_ACCOUNT_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GA',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GA_ACCOUNT_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GTAGJS',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GTAGJS_ACCOUNT_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_UNIVERSAL',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_UNIVERSAL_ACCOUNT_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_ANALYTICS',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_UUID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_DOMAIN_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_MICROSOFT_CAMPAIGN_ACTION_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_START_COUNTER',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_VISUAL_REVENUE',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_XITI',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_XITI_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON_ACCOUNT_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CRITEO',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_CRITEO_ZONE_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_LABEL',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_LANGUAGE',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_FORMAT',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_COLOR',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_VALUE',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_CURRENCY',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_CUSTOM1',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_CONVERSION_CUSTOM2',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_REMARKETING',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ADWORD_REMARKETING_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_PURECHAT',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_PURECHAT_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ZOPIM',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_ZOPIM_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_FACEBOOK_PIXEL',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_FACEBOOK_PIXEL_YOUR_ID',
+        'MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_SORT_ORDER',
+      ];
     }
   }
