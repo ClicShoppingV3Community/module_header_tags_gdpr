@@ -34,7 +34,7 @@ tarteaucitron.init({
     "privacyUrl": "", /* Privacy policy url */
 
     "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
-    "cookieName": "tartaucitron", /* Cookie name */
+    "cookieName": "tarteaucitron", /* Cookie name */
     
     "orientation": "top", /* Banner position (top - bottom) */
     "showAlertSmall": true, /* Show the small banner on bottom right */
@@ -47,9 +47,31 @@ tarteaucitron.init({
 
     "removeCredit": false, /* Remove credit link */
     "moreInfoLink": true, /* Show more info link */
-    "useExternalCss": false /* If false, the tarteaucitron.css file will be loaded */
+    "useExternalCss": false, /* If false, the tarteaucitron.css file will be loaded */
 
-    //"cookieDomain": ".my-multisite-domaine.fr" /* Shared cookie for subdomain website */
+    //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for subdomain website */
+                          
+    "readmoreLink": "/cookiespolicy" /* Change the default readmore link pointing to opt-out.ferank.eu */
 });
 </script>
+```
+
+# Create custom service
+```js
+tarteaucitron.services.mycustomservice = {
+  "key": "mycustomservice",
+  "type": "social|analytic|ads|video|support",
+  "name": "MyCustomService",
+  "needConsent": true,
+  "cookies": ['cookie', 'cookie2'],
+  "readmoreLink": "/custom_read_more", // If you want to change readmore link
+  "js": function () {
+    "use strict";
+    // When user allow cookie
+  },
+  "fallback": function () {
+    "use strict";
+    // when use deny cookie
+  }
+};
 ```
