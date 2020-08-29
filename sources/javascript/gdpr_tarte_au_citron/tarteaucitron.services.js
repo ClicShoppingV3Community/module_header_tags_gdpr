@@ -2208,9 +2208,7 @@ tarteaucitron.services.vimeo = {
                     }
                     video_qs += "transparent=" + video_transparent;
                 }
-
-
-            }
+  }
 
             video_frame = '<iframe src="//player.vimeo.com/video/' + video_id + video_qs + '" ' + frame_width + frame_height + ' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
 

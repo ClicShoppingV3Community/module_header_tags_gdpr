@@ -1129,9 +1129,7 @@ var tarteaucitron = {
                     // apply
                     tarteaucitron.userInterface.css('tarteaucitron', 'top', mainTop + 'px');
                 }
-
-
-            } else if (type === 'cookie') {
+  } else if (type === 'cookie') {
 
                 // put cookies list at bottom
                 if (document.getElementById('tarteaucitronAlertSmall') !== null) {
