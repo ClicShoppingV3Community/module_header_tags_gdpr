@@ -1213,11 +1213,6 @@ type=\'text/javascript\';e.parentNode.insertBefore($,e)})(document,\'script\');
         'sort_order' => '0',
         'date_added' => 'now()'
       ]);
-
-
-      return $CLICSHOPPING_Db->save('configuration', ['configuration_value' => '1'],
-        ['configuration_key' => 'WEBSITE_MODULE_INSTALLED']
-      );
     }
 
     function remove()
