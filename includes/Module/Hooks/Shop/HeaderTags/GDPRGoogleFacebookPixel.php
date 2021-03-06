@@ -39,7 +39,7 @@
 
         $order_id = $QLastorder->valueInt('orders_id');
 
-        if (!is_null($order_id)) {
+        if (!\is_null($order_id)) {
 
           $data = '';
 
@@ -105,7 +105,7 @@
 
     public function execute()
     {
-      if (defined('MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_FACEBOOK_PIXEL_YOUR_ID')) {
+      if (\defined('MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_FACEBOOK_PIXEL_YOUR_ID')) {
         $output = '<script type="text/javascript">tarteaucitron.user.facebookpixelId = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_FACEBOOK_PIXEL_YOUR_ID . '\'; tarteaucitron.user.facebookpixelMore = function () {' . $this->getOption() . '};(tarteaucitron.job = tarteaucitron.job || []).push(\'facebookpixel\');</script>';
 
         return $output;

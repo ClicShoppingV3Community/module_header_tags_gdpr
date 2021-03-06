@@ -26,7 +26,7 @@
       $this->title = CLICSHOPPING::getDef('module_header_tags_gdpr_tarte_au_citron_title');
       $this->description = CLICSHOPPING::getDef('module_header_tags_gdpr_tarte_au_citron_description');
 
-      if (defined('MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS')) {
+      if (\defined('MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS')) {
         $this->sort_order = MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_SORT_ORDER;
         $this->enabled = (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS == 'True');
       }
@@ -191,7 +191,7 @@
 //**************************
 //Advertisement
 //**************************
-      if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON == 'True' && !is_null($_GET['products_id'])) {
+      if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON == 'True' && !\is_null($_GET['products_id'])) {
         $amazon = '<div class="amazon_product" amazonid="' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON_ACCOUNT_ID . '" productid="' . (int)$_GET['products_id'] . '"></div>';
       } else {
         $amazon = '';
@@ -307,7 +307,7 @@ EOD;
 
     function check()
     {
-      return defined('MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS');
+      return \defined('MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_STATUS');
     }
 
     function install()

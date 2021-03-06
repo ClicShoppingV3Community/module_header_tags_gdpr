@@ -145,7 +145,7 @@
 
     public function execute()
     {
-      if (defined('MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GA_ACCOUNT_ID')) {
+      if (\defined('MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GA_ACCOUNT_ID')) {
         $output = '<script type="text/javascript">tarteaucitron.user.gajsUa = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GA_ACCOUNT_ID . '\';tarteaucitron.user.gajsMore = function () { ' . $this->getOption() . ' };(tarteaucitron.job = tarteaucitron.job || []).push(\'gajs\');</script>';
         return $output;
       }

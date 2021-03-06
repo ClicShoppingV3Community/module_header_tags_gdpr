@@ -36,7 +36,7 @@
 
     public function execute()
     {
-      if (defined('MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GTAGJS_ACCOUNT_ID')) {
+      if (\defined('MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GTAGJS_ACCOUNT_ID')) {
         $output = '<script type="text/javascript">tarteaucitron.user.gtagUa = \'' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_GOOGLE_ANALYTICS_GTAGJS_ACCOUNT_ID . '\';tarteaucitron.user.gtagMore = function () {' . $this->getOption() . '};(tarteaucitron.job = tarteaucitron.job || []).push(\'gtag\');</script>';
         return $output;
       }
