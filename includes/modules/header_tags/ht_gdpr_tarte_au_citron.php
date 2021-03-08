@@ -14,12 +14,12 @@
 
   class ht_gdpr_tarte_au_citron
   {
-    var $code = 'ht_gdpr_tarte_au_citron';
-    var $group = 'header_tags';
-    var $title;
-    var $description;
-    var $sort_order;
-    var $enabled = false;
+    public string $code = 'ht_gdpr_tarte_au_citron';
+    public string $group = 'header_tags';
+    public string $title;
+    public string $description;
+    public ?int $sort_order = 0;
+    public bool $enabled = false;
 
     function __construct()
     {
@@ -37,6 +37,7 @@
       $CLICSHOPPING_Hooks = Registry::get('Hooks');
       $CLICSHOPPING_Template = Registry::get('Template');
       $CLICSHOPPING_Language = Registry::get('Language');
+      $CLICSHOPPING_ProductsCommon = Registry::get('ProductsCommon');
 
       $language_code = $CLICSHOPPING_Language->getLanguageCode();
 
@@ -191,8 +192,8 @@
 //**************************
 //Advertisement
 //**************************
-      if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON == 'True' && !\is_null($_GET['products_id'])) {
-        $amazon = '<div class="amazon_product" amazonid="' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON_ACCOUNT_ID . '" productid="' . (int)$_GET['products_id'] . '"></div>';
+      if (MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON == 'True' && !\is_null($CLICSHOPPING_ProductsCommon->getId())) {
+        $amazon = '<div class="amazon_product" amazonid="' . MODULE_HEADER_TAGS_GDPR_TARTE_AU_CITRON_PLUGIN_AMAZON_ACCOUNT_ID . '" productid="' . (int)$CLICSHOPPING_ProductsCommon->getId() . '"></div>';
       } else {
         $amazon = '';
       }
