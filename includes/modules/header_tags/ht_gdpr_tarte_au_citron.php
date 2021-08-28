@@ -16,8 +16,8 @@
   {
     public string $code = 'ht_gdpr_tarte_au_citron';
     public string $group = 'header_tags';
-    public string $title;
-    public string $description;
+    public $title;
+    public $description;
     public ?int $sort_order = 0;
     public bool $enabled = false;
 
