@@ -29,7 +29,7 @@
 
     private function getOption()
     {
-      if (isset($_GET['Checkout']) && isset($_GET['Success'])) {
+      if (isset($_GET['Checkout'], $_GET['Success'])) {
         $QLastorder = $this->db->prepare('select orders_id 
                                           from :table_orders
                                           order by orders_id DESC
